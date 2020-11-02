@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+      <Slider></Slider>
+      <Parallax></Parallax>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+      <hr>
+      <button>kek</button>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Slider from './components/Slider'
+import Parallax from './components/ParallaxPicture'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Slider,
+    Parallax,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  height: 100vh;
 }
 </style>
