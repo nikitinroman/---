@@ -2,21 +2,7 @@
     <div>
       <Slider></Slider>
       <Parallax></Parallax>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
-      <hr>
-      <button>kek</button>
+      <div style="height: 100vh; background-color: white"></div>
     </div>
 </template>
 

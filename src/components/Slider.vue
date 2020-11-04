@@ -150,6 +150,7 @@ export default {
   border-radius: 50px;
   background-color: white;
   text-align: center;
+  margin-bottom: 5px;
 }
 .activeDivLink{
   background-color: #3a201e;
