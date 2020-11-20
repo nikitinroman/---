@@ -1,82 +1,59 @@
 <template>
-  <div style="position: relative;">
+  <div>
+  <div style="position: relative; height: 0px">
     <parallax :fixed="true">
       <img src="https://mymoscowcity.com/upload/iblock/a9c/a9c2b0b174448e6054cbbbd957fd0429.jpg" alt="parallax_bg">
     </parallax>
-    <div class="invisibleDiv" v-bind:class="{visibleDiv: (windowTop > 300)}">
-      <div class="innerDiv">
-        <div style="align-self: center; margin-top: 6px">
-          <img height="220px" width="220px" src="https://images11.cosmopolitan.ru/upload/img_cache/53a/53a72f08cdb7dabc97b042badb78eb29_cropped_666x833.webp?webp" alt="photo">
-        </div>
-        <div class="titleDiv">
-          <p style="font-size: x-large; font-weight: bold">Конный спорт 1</p>
-        </div>
-        <div>
-          <p class="contentDiv">тут текст текст текст тут текст текстекст текст тут текст тектекст текст тут текст тексттекст текст тут текст тексттекст текст тут текст текстсттекст текст тут текст текстт текст тут текст текст текст</p>
-        </div>
-      </div>
-      <div class="innerDiv">
-        <div style="align-self: center; margin-top: 6px">
-          <img height="220px" width="220px" src="https://images11.cosmopolitan.ru/upload/img_cache/53a/53a72f08cdb7dabc97b042badb78eb29_cropped_666x833.webp?webp" alt="photo">
-        </div>
-        <div class="titleDiv">
-          <p style="font-size: x-large; font-weight: bold">Конный спорт 1</p>
-        </div>
-        <div>
-          <p class="contentDiv">тут текст текст текст тут текст текстекст текст тут текст тектекст текст тут текст тексттекст текст тут текст тексттекст текст тут текст текстсттекст текст тут текст текстт текст тут текст текст текст</p>
-        </div>
-      </div>
-      <div class="innerDiv">
-        <div style="align-self: center; margin-top: 6px">
-          <img height="220px" width="220px" src="https://images11.cosmopolitan.ru/upload/img_cache/53a/53a72f08cdb7dabc97b042badb78eb29_cropped_666x833.webp?webp" alt="photo">
-        </div>
-        <div class="titleDiv">
-          <p style="font-size: x-large; font-weight: bold">Конный спорт 1</p>
-        </div>
-        <div>
-          <p class="contentDiv">тут текст текст текст тут текст текстекст текст тут текст тектекст текст тут текст тексттекст текст тут текст тексттекст текст тут текст текстсттекст текст тут текст текстт текст тут текст текст текст</p>
-        </div>
-      </div>
-      <div class="innerDiv">
-        <div style="align-self: center; margin-top: 6px">
-          <img height="220px" width="220px" src="https://images11.cosmopolitan.ru/upload/img_cache/53a/53a72f08cdb7dabc97b042badb78eb29_cropped_666x833.webp?webp" alt="photo">
-        </div>
-        <div class="titleDiv">
-          <p style="font-size: x-large; font-weight: bold">Конный спорт 1</p>
-        </div>
-        <div>
-          <p class="contentDiv">тут текст текст текст тут текст текстекст текст тут текст тектекст текст тут тектекст текст тут тектекст текст тут тектекст текст тут текст тексттекст текст тут текст тексттекст текст тут текст текстсттекст текст тут текст текстт текст тут текст текст текст</p>
-        </div>
-      </div>
-      <!--
-      <div class="innerDiv">
-        <div style="align-self: center; margin-top: 6px">
-          <img height="220px" width="220px" src="https://images11.cosmopolitan.ru/upload/img_cache/53a/53a72f08cdb7dabc97b042badb78eb29_cropped_666x833.webp?webp" alt="photo">
-        </div>
-        <div class="titleDiv">
-          <p style="font-size: x-large; font-weight: bold">Конный спорт 1</p>
-        </div>
-        <div>
-          <p class="contentDiv">тут текст текст текст тут текст текстекст текст тут текст тектекст текст тут тет тут текст текстекст текст тут текст тектекст текст тут текст тексттекст текст тут текст тексттекст текст тут текст текстсттекст текст тут текст текстт текст тут текст текст текст</p>
-        </div>
-      </div>-->
-
+  </div>
+  <div>
+    <div style="border-radius: 50px; background-color: whitesmoke; max-width: 200px; margin: 20px auto; opacity: 0.9">
+      <a name="hobbies"></a>
+      <h1 style="text-align: center;">Мои хобби</h1>
     </div>
+    <Card :about-me-list="aboutMeList" :window-top="windowTop" :window-top-val="300"></Card>
+  </div>
   </div>
 </template>
 
 <script>
 import Parallax from 'vue-parallaxy'
+import Card from './Card'
 
 
 export default {
-  name: "App",
   components: {
-    Parallax
+    Parallax,
+    Card
   },
   data() {
     return {
-      windowTop: 0
+      windowTop: 0,
+      aboutMeList: [
+        {
+          id: 0,
+          title: 'Русский бильярд',
+          content: 'Одно из первых моих серьезных увлечений- русский бильярд. Так уж вышло, что мой отец- заядлый любитель этого вида спорта и с самого детства он привил мне любовь к бильярду. ',
+          img: 'http://www.80store.ru/images/bilyateka/kak-igrat-v-russkij-biljard.jpg'
+        },
+        {
+          id: 1,
+          title: 'Конный спорт',
+          content: 'С самого раннего детства любил животных, а в особенности- дельфинов и лошадей. Поэтому когда в нашем маленьком городе открылся конный клуб "Буцефал", я сразу записался на занятия.',
+          img: 'https://ss.sport-express.ru/userfiles/materials/158/1589321/origin_0122dabe.jpg'
+        },
+        {
+          id: 2,
+          title: 'Скейтбординг',
+          content: 'Не стоит бояться попробовать что-то новое. Видели ребят на странных досках с колесами, рассекающих по тротуарам/дорогам? Попробуйте и сами! Жизнь всего одна, не нужно бояться добавлять в нее краски!',
+          img: 'https://www.wikihow.com/images/thumb/4/48/Ride-a-Penny-Board-Step-6-Version-3.jpg/aid4670207-v4-728px-Ride-a-Penny-Board-Step-6-Version-3.jpg'
+        },
+        {
+          id: 3,
+          title: 'Программирование',
+          content: 'В программирование я пришел в 2018 году. С тех пор я успел изучить и освоить несколько языков программирования, машинное обучение, а сейчас- изучаю фронтенд разработку.',
+          img: 'https://dev.by/storage/images/48/01/93/24/derived/4876d6d2df43ae47dd25a4a767408c77.jpg'
+        },
+      ]
     };
   },
   mounted() {
@@ -96,42 +73,4 @@ export default {
 
 <style scoped>
 
-.invisibleDiv {
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  position: relative;
-  top: 20%;
-  left: 15%;
-  height: 900px;
-  width: 1000px;
-  opacity: 0;
-}
-
-.visibleDiv {
-  opacity: 0.9;
-}
-
-.innerDiv{
-  display: flex;
-  flex-direction: column;
-  background-color: whitesmoke;
-  justify-content: center;
-  border-radius: 40px;
-  width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-}
-.contentDiv{
-  height: auto;
-  text-align: center;
-}
-.titleDiv{
-  text-align: center;
-  height: 40px;
-  margin-top: -10px;
-}
 </style>

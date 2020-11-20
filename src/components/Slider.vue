@@ -1,9 +1,10 @@
 <template>
   <div>
+    <a name="aboutme"></a>
     <div class="navBox">
       <div class="navBar">
-        <div class="navBut" v-for="item in navbar" v-bind:key="item.href" v-bind:class="{ activeDivLink: item.id==slideId }">
-          <a class="usualLink" :href="item" v-bind:class="{ activeLink: item.id==slideId }">{{item.title}}</a>
+        <div @click="goToHash(item.href)" class="navBut" v-for="item in navbar" v-bind:key="item.href" v-bind:class="{ activeDivLink: item.id==slideId }">
+          <a class="usualLink" :href="item.href" v-bind:class="{ activeLink: item.id==slideId }">{{item.title}}</a>
         </div>
       </div>
     </div>
@@ -16,23 +17,23 @@
     </div>
     <div class="shortInfo" v-if="slideId==0" style="left: 40%; top: 25%;">
       <div class="infoDiv">
-        <div class="miniInfoDiv"><h1>Немного слов 0</h1></div>
-        <div class="miniInfoDiv"><p>Тут слов немного больше, но не много</p></div>
-        <div class="miniInfoDiv"><p>Тут слов прям много много много много много много много много многоТут слов прям много много много много много много много много много</p></div>
+        <div class="miniInfoDiv"><h1>Привет, друг!</h1></div>
+        <div class="miniInfoDiv"><p>Меня зовут Никитин Роман</p></div>
+        <div class="miniInfoDiv"><p>Я студент Финансового университета при Правительстве Российской Федерации</p></div>
       </div>
     </div>
     <div class="shortInfo" v-else-if="slideId==1" style="left: 70%; top: 50%;">
       <div class="infoDiv">
-        <div class="miniInfoDiv"><h1>Немного слов 1</h1></div>
-        <div class="miniInfoDiv"><p>Тут слов немного больше, но не много</p></div>
-        <div class="miniInfoDiv"><p>Тут слов прям много много много много много много много много многоТут слов прям много много много много много много много много много</p></div>
+        <div class="miniInfoDiv"><h1>Мои хобби</h1></div>
+        <div class="miniInfoDiv"><p>Я люблю развиваться разносторонне</p></div>
+        <div class="miniInfoDiv"><p>Обожаю спорт и технологии. Увлекаюсь всем от скейта до машинного обучения</p></div>
       </div>
     </div>
     <div class="shortInfo" v-else-if="slideId==2"  style="left: 5%; top: 55%;">
       <div class="infoDiv">
-        <div class="miniInfoDiv"><h1>Немного слов 2</h1></div>
-        <div class="miniInfoDiv"><p>Тут слов немного больше, но не много</p></div>
-        <div class="miniInfoDiv"><p>Тут слов прям много много много много много много много много многоТут слов прям много много много много много много много много много</p></div>
+        <div class="miniInfoDiv"><h1>Сила в знаниях</h1></div>
+        <div class="miniInfoDiv"><p>В свободное время люблю познавать новое</p></div>
+        <div class="miniInfoDiv"><p>Прошел много различных курсов по машинному обучению, статистике и фронтенд-разработке</p></div>
       </div>
     </div>
   </div>
@@ -58,28 +59,28 @@ export default {
       navbar:[
         {
           id: 0,
-          href: '/sosi',
+          href: '#aboutme',
           title: 'Обо мне'
         },
         {
           id: 1,
-          href: '/lol',
+          href: '#hobbies',
           title: 'Хобби'
         },
         {
           id: 2,
-          href: '/mem',
+          href: '#education',
           title: 'Образование'
         },
         {
           id: 3,
-          href: '/pek',
+          href: '#github',
           title: 'Цели'
         },
         {
           id: 4,
-          href: '/kek',
-          title: 'Прочее'
+          href: '#footer',
+          title: 'Контакты'
         },
       ],
 
@@ -102,6 +103,9 @@ export default {
     splideMounted(splide){
       this.slideId = splide.index
       return this.slideId
+    },
+    goToHash(href){
+      window.location.hash=href
     }
   },
 }
@@ -130,6 +134,7 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
+  transition: 1s;
 }
 .shortInfo{
   position: absolute;
@@ -140,15 +145,11 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
-.infoDiv:hover{
-  transition: all 3s ease-in;
-  transform: scale(1.04);
-}
 .miniInfoDiv{
   width: 300px;
   height: auto;
   border-radius: 50px;
-  background-color: white;
+  background-color: whitesmoke;
   text-align: center;
   margin-bottom: 5px;
 }
