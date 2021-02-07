@@ -2,7 +2,7 @@
   <div>
   <div style="position: relative; height: 0px">
     <parallax :fixed="true">
-      <img src="https://mymoscowcity.com/upload/iblock/a9c/a9c2b0b174448e6054cbbbd957fd0429.jpg" alt="parallax_bg">
+      <img src="https://i.ytimg.com/vi/vMDA6LySU1M/maxresdefault.jpg" alt="parallax_bg">
     </parallax>
   </div>
   <div>
